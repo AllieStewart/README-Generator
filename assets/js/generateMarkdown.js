@@ -28,6 +28,8 @@ function generateMarkdown(data) {
 `;
 }
 // after return, add more `# ${data.<word>}` values,
-// maybe License, Description, Links, etc.
+// sections: [Description, Table of Contents, 
+// Installation, Usage, License, Contributing, Tests, and Questions].
+// License badge near top of README.
 
 module.exports = generateMarkdown;

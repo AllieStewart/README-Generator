@@ -12,7 +12,16 @@ const markdown = require('./generateMarkdown');
     // },
 //])
 const questions = [
-
+    // Project title? -> displays as title of README
+    // Ask about description, installation instructions, 
+    // usage information, contribution guidelines, and test instructions;
+    // -> Add under their sections; Description, Installation, Usage, Contributing, and Tests
+    // Choose License from LIST OF OPTIONS
+    // -> Badge added near top of README, notice added to License section
+    // GitHub username? -> Added to Questions section, with link to GitHub profile
+    // Email address? -> Added to Questions section, with instructions
+    // on how to reach <user> with additional questions.
+    // Click on links in Table of Contents, directed to corresponding section of README
 ];
 
 // TODO: Create a function to write README file
