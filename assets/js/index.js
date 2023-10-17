@@ -3,26 +3,67 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const markdown = require('./generateMarkdown');
+const fs = require('fs');
 // TODO: Create an array of questions for user input
-// inquirer
-//  .prompt([
-    // {
-        // type: 'input' or 'list' or 'checkbox', message: 'Question?', name: 'something',
-        // choices: [ 'choice1', 'choice2' ]
-    // },
-//])
-const questions = [
-    // Project title? -> displays as title of README
-    // Ask about description, installation instructions, 
-    // usage information, contribution guidelines, and test instructions;
-    // -> Add under their sections; Description, Installation, Usage, Contributing, and Tests
-    // Choose License from LIST OF OPTIONS
-    // -> Badge added near top of README, notice added to License section
-    // GitHub username? -> Added to Questions section, with link to GitHub profile
-    // Email address? -> Added to Questions section, with instructions
-    // on how to reach <user> with additional questions.
-    // Click on links in Table of Contents, directed to corresponding section of README
-];
+inquirer
+ .prompt([
+    {
+        type: 'input', 
+        message: 'Welcome to the README generator! What is the title of your project?', 
+        name: 'title',
+    },
+    {
+        type: 'input', 
+        message: 'Give a description of your project.', 
+        name: 'description',
+
+    },
+    {
+        type: 'input', 
+        message: 'What is the installation method?', 
+        name: 'installation',
+    },
+    {
+        type: 'input', 
+        message: 'What is the usage?', 
+        name: 'usage',
+    },
+    {
+        type: 'input', 
+        message: 'Who contributed to the project?', 
+        name: 'contributing',
+    },
+    {
+        type: 'input', 
+        message: 'What kind of tests were ran?', 
+        name: 'tests',
+    },
+    {
+        type: 'list', 
+        message: 'Select a license that you will be using in your code.', 
+        name: 'license',
+        choices: [ 'MIT', '' ]
+    },
+    {
+        type: 'input', 
+        message: 'What is your GitHub profile name?', 
+        name: 'github',
+    },
+    {
+        type: 'input', 
+        message: 'What is your email address?', 
+        name: 'email',
+    },
+    {
+        type: 'input', 
+        message: 'Instructions on how to reach you?', 
+        name: 'questions',
+    },
+])
+
+//const questions = [
+//
+//];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {

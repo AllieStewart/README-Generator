@@ -22,8 +22,53 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
+// ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+// ^Badges
 function generateMarkdown(data) {
   return `# ${data.title}
+  </br>
+  ## Badge
+  ![badmath]
+
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation] (#installation)
+  - [Usage] (#usage)
+  - [Contributing] (#contributing)
+  - [Tests] (#tests)
+  - [Questions] (#questions)
+  - [Licenses] (#licenses)
+  </br>
+
+  ## Description
+  ${data.description}
+  </br>
+
+  ## Installation
+  ${data.installation}
+  </br>
+
+  ## Usage
+  ${data.usage}
+  </br>
+
+  ## License
+  ${data.license}
+  </br>
+
+  ## Contributing
+  ${data.contributing}
+  </br>
+
+  ## Tests
+  ${data.tests}
+  </br>
+
+  ## Questions
+  GitHub profile: github.com/${data.github}
+  Email: ${data.email}
+  How to reach me: ${data.questions}
+  </br>
 
 `;
 }
