@@ -1,9 +1,11 @@
 // Start of JS file
-// Write the code here.
+
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./generateMarkdown');
+//const fs = require('fs');
 const { writeToFile } = require('fs').promises;
+
 // TODO: Create an array of questions for user input
 //const promptUser = () => {
 //    return inquirer.prompt([
@@ -80,3 +82,4 @@ const init = () => {
 
 // Function call to initialize app
 init();
+// End of JS File
