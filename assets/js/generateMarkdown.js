@@ -2,7 +2,9 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   // returns license badge based on which license passed in
-      // choices: [ 'MIT', etc?];
+      // choices:
+      // [ 'Apache', 'GNU', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost', 'Creative Commons Zero',
+      // 'Eclipse', 'Mozilla', 'Unlicense', 'NONE']
   // if no license, return empty string
 }
 
@@ -22,13 +24,12 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-// ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-// ^Badges
 function generateMarkdown(data) {
   return `# ${data.title}
   </br>
   ## Badge
-  ![badmath]
+  ![GitHub](https://img.shields.io/github/license/:${data.github}/:${data.title})
+  </br>
 
   ## Table of Contents
   - [Description](#description)
@@ -67,14 +68,9 @@ function generateMarkdown(data) {
   ## Questions
   GitHub profile: github.com/${data.github}
   Email: ${data.email}
-  How to reach me: ${data.questions}
+  How to reach me: ${data.howtoreach}
   </br>
-
 `;
 }
-// after return, add more `# ${data.<word>}` values,
-// sections: [Description, Table of Contents, 
-// Installation, Usage, License, Contributing, Tests, and Questions].
-// License badge near top of README.
 
 module.exports = generateMarkdown;

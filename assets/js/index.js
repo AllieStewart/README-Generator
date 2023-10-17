@@ -2,11 +2,12 @@
 // Write the code here.
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const markdown = require('./generateMarkdown');
-const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown');
+const { writeToFile } = require('fs').promises;
 // TODO: Create an array of questions for user input
-inquirer
- .prompt([
+//const promptUser = () => {
+//    return inquirer.prompt([
+const questions = [
     {
         type: 'input', 
         message: 'Welcome to the README generator! What is the title of your project?', 
@@ -42,7 +43,8 @@ inquirer
         type: 'list', 
         message: 'Select a license that you will be using in your code.', 
         name: 'license',
-        choices: [ 'MIT', '' ]
+        choices: [ 'Apache', 'GNU', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost', 'Creative Commons Zero',
+    'Eclipse', 'Mozilla', 'Unlicense', 'NONE']
     },
     {
         type: 'input', 
@@ -57,13 +59,9 @@ inquirer
     {
         type: 'input', 
         message: 'Instructions on how to reach you?', 
-        name: 'questions',
+        name: 'howtoreach',
     },
-])
-
-//const questions = [
-//
-//];
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -71,8 +69,13 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {
+// function init() {}
+const init = () => {
     // starts the questions/inquirer -> prompts upon init()
+    inquirer.prompt(questions)
+    .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
+    .then(() => console.log('Successfully wrote to README.md'))
+    .catch((err) => console.error(err));
 }
 
 // Function call to initialize app
