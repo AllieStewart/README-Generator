@@ -2,7 +2,10 @@
 
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const generateMarkdown = require('/generateMarkdown');
+const generateMarkdown = require('./generateMarkdown');
+const renderLicenseBadge = require('./generateMarkdown');
+const renderLicenseLink = require('./generateMarkdown');
+const renderLicenseSection = require('./generateMarkdown');
 //const fs = require('fs');
 const { writeToFile } = require('fs').promises;
 
@@ -68,6 +71,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     // write README file; would use markdown object
+    // append renderLicenseSection to generateMarkdown?
 }
 
 // TODO: Create a function to initialize app
@@ -75,8 +79,10 @@ function init()
 {
     // Starts the questions/inquirer -> prompts upon init()
     inquirer.prompt(questions)
+    .then((answers) => renderLicenseBadge(answers.license))
+    .then((answers) => renderLicenseLink(answers.license))
     .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
-    .then(() => console.log('Successfully wrote to README.md'))
+    .then(() => console.log('Successfully wrote to README.md.'))
     .catch((err) => console.error(err));
 }
 

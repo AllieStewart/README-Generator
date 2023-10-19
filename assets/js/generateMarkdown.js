@@ -124,12 +124,23 @@ function renderLicenseLink(license) {
   }
 }
 
-    // TODO: Create a function that returns the license section of README
-    // If there is no license, return an empty string
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
 function renderLicenseSection(license) {
-  // returns license section of README
-  // if no license, return empty string
-  // ##LICENSE or ##LICENSES section
+  // Returns ## License section of README
+  // If no license, return empty string
+  if (license !== "NONE")
+  {
+    return `## License
+    This project is covered under the ${data.license} license. </br>
+    License link: ${data.licenseLink}
+    </br>`;
+  }
+
+  else
+  {
+    return "";
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -138,7 +149,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
   </br>
   ## Badge
-  ![GitHub](https://img.shields.io/github/license/:${data.github}/:${data.title})
+  ${data.licenseBadge}
   </br>
 
   ## Table of Contents
@@ -163,10 +174,6 @@ function generateMarkdown(data) {
   ${data.usage}
   </br>
 
-  ## License
-  ${data.license}
-  </br>
-
   ## Contributing
   ${data.contributing}
   </br>
@@ -184,4 +191,7 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+module.exports = renderLicenseBadge;
+module.exports = renderLicenseLink;
+module.exports = renderLicenseSection;
 // End of JS File
