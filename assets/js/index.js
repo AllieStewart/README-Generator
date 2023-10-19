@@ -28,7 +28,7 @@ const questions = [
     },
     {
         type: 'input', 
-        message: 'What is the usage?', 
+        message: 'How do you use this project?', 
         name: 'usage',
     },
     {
@@ -71,9 +71,9 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-// function init() {}
-const init = () => {
-    // starts the questions/inquirer -> prompts upon init()
+function init()
+{
+    // Starts the questions/inquirer -> prompts upon init()
     inquirer.prompt(questions)
     .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
     .then(() => console.log('Successfully wrote to README.md'))
