@@ -1,7 +1,7 @@
-# Project Template
+# README Test Project
   
   ## Badge
-  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
   </br>
 
   ## Table of Contents
@@ -15,15 +15,15 @@
   </br>
 
   ## Description
-  This is a test template.
+  This is a test to see how the README Generator works.
   </br>
 
   ## Installation
-  Typing in what is needed.
+  Simply type in what is needed.
   </br>
 
   ## Usage
-  Use it to test the program.
+  You can use the README.md output in your own project.
   </br>
 
   ## Contributing
@@ -31,12 +31,16 @@
   </br>
 
   ## Tests
-  This one.
+  Most tests were to see if the README would output properly.
   </br>
 
   ## Questions
   GitHub profile: https://github.com/AllieStewart </br>
-  Email: nope@uhuh.com </br>
-  How to reach me: Don't do it. </br>
+  Email: notarealemail@no.com </br>
+  How to reach me: Please message me through GitHub or email, thanks! </br>
   </br>
 
+
+  ## License
+  This project is covered under the MIT license. </br>
+  License link: https://opensource.org/licenses/MIT
