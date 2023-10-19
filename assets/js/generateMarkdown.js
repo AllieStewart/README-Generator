@@ -70,52 +70,52 @@ function renderLicenseLink(license) {
   // If 'NONE' ('else'), returns empty string.
   if (license === "Apache")
   {
-    return `(https://opensource.org/licenses/Apache-2.0)`;
+    return `https://opensource.org/licenses/Apache-2.0`;
   }
 
   else if (license === "GNU")
   {
-    return `(https://www.gnu.org/licenses/gpl-3.0)`;
+    return `https://www.gnu.org/licenses/gpl-3.0`;
   }
 
   else if (license === "MIT")
   {
-    return `(https://opensource.org/licenses/MIT)`;
+    return `https://opensource.org/licenses/MIT`;
   }
 
   else if (license === "BSD 2-Clause")
   {
-    return `(https://opensource.org/licenses/BSD-2-Clause)`;
+    return `https://opensource.org/licenses/BSD-2-Clause`;
   }
 
   else if (license === "BSD 3-Clause")
   {
-    return `(https://opensource.org/licenses/BSD-3-Clause)`;
+    return `https://opensource.org/licenses/BSD-3-Clause`;
   }
 
   else if (license === "Boost")
   {
-    return `(https://www.boost.org/LICENSE_1_0.txt)`;
+    return `https://www.boost.org/LICENSE_1_0.txt`;
   }
 
   else if (license === "Creative Commons Zero")
   {
-    return `(http://creativecommons.org/publicdomain/zero/1.0/)`;
+    return `http://creativecommons.org/publicdomain/zero/1.0/`;
   }
 
   else if (license === "Eclipse")
   {
-    return `(https://opensource.org/licenses/EPL-1.0)`;
+    return `https://opensource.org/licenses/EPL-1.0`;
   }
 
   else if (license === "Mozilla")
   {
-    return `(https://opensource.org/licenses/MPL-2.0)`;
+    return `https://opensource.org/licenses/MPL-2.0`;
   }
 
   else if (license === "Unlicense")
   {
-    return `(http://unlicense.org/)`;
+    return `http://unlicense.org/`;
   }
 
   else
@@ -133,10 +133,10 @@ function renderLicenseSection(license) {
   // If no license, return empty string
   if (license !== "NONE")
   {
-    return `## License
-    This project is covered under the ${license} license. </br>
-    License link: ${renderLicenseLink(license)} </br>
-    </br>`;
+    return `
+  ## License
+  This project is covered under the ${license} license. </br>
+  License link: ${renderLicenseLink(license)}`;
   }
 
   else
@@ -149,8 +149,8 @@ function renderLicenseSection(license) {
 // ![GitHub](https://img.shields.io/github/license/:${data.github}/:${data.title})
 function generateMarkdown(data) {
   return `# ${data.title}
-  </br>
-  ## Badge </br>
+  
+  ## Badge
   ${renderLicenseBadge(data.license)}
   </br>
 
@@ -189,7 +189,7 @@ function generateMarkdown(data) {
   Email: ${data.email} </br>
   How to reach me: ${data.howtoreach} </br>
   </br>
-  
+
 `;
 }
 

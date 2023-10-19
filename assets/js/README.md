@@ -1,7 +1,7 @@
-# README Carefully
-  </br>
-  ## Badge </br>
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+# Testing-Project
+  
+  ## Badge
+  [![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]
   </br>
 
   ## Table of Contents
@@ -15,31 +15,32 @@
   </br>
 
   ## Description
-  Doing my best
+  I am testing the README generator.
   </br>
 
   ## Installation
-  Trying very hard
+  You need to have a PC, and hope for the best.
   </br>
 
   ## Usage
-  Yes
+  I type in words and stuff happens.
   </br>
 
   ## Contributing
-  No
+  Allie Stewart.
   </br>
 
   ## Tests
-  Several
+  A few, such as this one, right now.
   </br>
 
   ## Questions
-  GitHub profile: (https://github.com/AllieStewart)
-  Email: nope
-  How to reach me: Okay
+  GitHub profile: https://github.com/AllieStewart </br>
+  Email: dontcontactme@nope </br>
+  How to reach me: Text or email, talking is scary business. </br>
   </br>
-## License
-    This project is covered under the MIT license. </br>
-    License link: (https://opensource.org/licenses/MIT) </br>
-    </br>
+
+
+  ## License
+  This project is covered under the Eclipse license. </br>
+  License link: https://opensource.org/licenses/EPL-1.0
