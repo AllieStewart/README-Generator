@@ -8,52 +8,52 @@ function renderLicenseBadge(license) {
   // If 'NONE' ('else'), returns empty string.
   if (license === "Apache")
   {
-    return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]";
+    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`;
   }
 
   else if (license === "GNU")
   {
-    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
+    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`;
   }
 
   else if (license === "MIT")
   {
-    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
   }
 
   else if (license === "BSD 2-Clause")
   {
-    return "[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)]";
+    return `[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)]`;
   }
 
   else if (license === "BSD 3-Clause")
   {
-    return "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]";
+    return `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]`;
   }
 
   else if (license === "Boost")
   {
-    return "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]";
+    return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]`;
   }
 
   else if (license === "Creative Commons Zero")
   {
-    return "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)]";
+    return `[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)]`;
   }
 
   else if (license === "Eclipse")
   {
-    return "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]";
+    return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]`;
   }
 
   else if (license === "Mozilla")
   {
-    return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]";
+    return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`;
   }
 
   else if (license === "Unlicense")
   {
-    return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]";
+    return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]`;
   }
 
   else
@@ -70,52 +70,52 @@ function renderLicenseLink(license) {
   // If 'NONE' ('else'), returns empty string.
   if (license === "Apache")
   {
-    return "(https://opensource.org/licenses/Apache-2.0)";
+    return `(https://opensource.org/licenses/Apache-2.0)`;
   }
 
   else if (license === "GNU")
   {
-    return "(https://www.gnu.org/licenses/gpl-3.0)";
+    return `(https://www.gnu.org/licenses/gpl-3.0)`;
   }
 
   else if (license === "MIT")
   {
-    return "(https://opensource.org/licenses/MIT)";
+    return `(https://opensource.org/licenses/MIT)`;
   }
 
   else if (license === "BSD 2-Clause")
   {
-    return "(https://opensource.org/licenses/BSD-2-Clause)";
+    return `(https://opensource.org/licenses/BSD-2-Clause)`;
   }
 
   else if (license === "BSD 3-Clause")
   {
-    return "(https://opensource.org/licenses/BSD-3-Clause)";
+    return `(https://opensource.org/licenses/BSD-3-Clause)`;
   }
 
   else if (license === "Boost")
   {
-    return "(https://www.boost.org/LICENSE_1_0.txt)";
+    return `(https://www.boost.org/LICENSE_1_0.txt)`;
   }
 
   else if (license === "Creative Commons Zero")
   {
-    return "(http://creativecommons.org/publicdomain/zero/1.0/)";
+    return `(http://creativecommons.org/publicdomain/zero/1.0/)`;
   }
 
   else if (license === "Eclipse")
   {
-    return "(https://opensource.org/licenses/EPL-1.0)";
+    return `(https://opensource.org/licenses/EPL-1.0)`;
   }
 
   else if (license === "Mozilla")
   {
-    return "(https://opensource.org/licenses/MPL-2.0)";
+    return `(https://opensource.org/licenses/MPL-2.0)`;
   }
 
   else if (license === "Unlicense")
   {
-    return "(http://unlicense.org/)";
+    return `(http://unlicense.org/)`;
   }
 
   else
@@ -134,7 +134,8 @@ function renderLicenseSection(license) {
   if (license !== "NONE")
   {
     return `## License
-    This project is covered under the ${this.license} license. </br>
+    This project is covered under the ${license} license. </br>
+    License link: ${renderLicenseLink(license)} </br>
     </br>`;
   }
 
@@ -149,8 +150,8 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
   </br>
-  ## Badge
-  ${data.licenseBadge}
+  ## Badge </br>
+  ${renderLicenseBadge(data.license)}
   </br>
 
   ## Table of Contents
@@ -159,8 +160,8 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [Tests](#tests)
-  - [Questions] #questions)
-  - [Licenses](#licenses)
+  - [Questions](#questions)
+  - [License](#license)
   </br>
 
   ## Description
@@ -184,10 +185,11 @@ function generateMarkdown(data) {
   </br>
 
   ## Questions
-  GitHub profile: github.com/${data.github}
-  Email: ${data.email}
-  How to reach me: ${data.howtoreach}
+  GitHub profile: https://github.com/${data.github} </br>
+  Email: ${data.email} </br>
+  How to reach me: ${data.howtoreach} </br>
   </br>
+  
 `;
 }
 

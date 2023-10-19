@@ -1,44 +1,45 @@
-# dfaqdaq
+# README Carefully
   </br>
-  ## Badge
-  undefined
+  ## Badge </br>
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
   </br>
 
   ## Table of Contents
   - [Description](#description)
-  - [Installation] (#installation)
-  - [Usage] (#usage)
-  - [Contributing] (#contributing)
-  - [Tests] (#tests)
-  - [Questions] (#questions)
-  - [Licenses] (#licenses)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  - [License](#license)
   </br>
 
   ## Description
-  hswrhju
+  Doing my best
   </br>
 
   ## Installation
-  rtw
+  Trying very hard
   </br>
 
   ## Usage
-  twtwtwt
+  Yes
   </br>
 
   ## Contributing
-  wrqrq
+  No
   </br>
 
   ## Tests
-  qrq
+  Several
   </br>
 
   ## Questions
-  GitHub profile: github.com/AllieStewart
-  Email: qgqahyqw
-  How to reach me: gwhyqwygq
+  GitHub profile: (https://github.com/AllieStewart)
+  Email: nope
+  How to reach me: Okay
   </br>
 ## License
-    This project is covered under the undefined license. </br>
+    This project is covered under the MIT license. </br>
+    License link: (https://opensource.org/licenses/MIT) </br>
     </br>
