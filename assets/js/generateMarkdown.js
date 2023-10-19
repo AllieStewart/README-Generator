@@ -122,6 +122,8 @@ function renderLicenseLink(license) {
   {
     return "";
   }
+
+  // License link:
 }
 
 // TODO: Create a function that returns the license section of README
@@ -132,8 +134,7 @@ function renderLicenseSection(license) {
   if (license !== "NONE")
   {
     return `## License
-    This project is covered under the ${data.license} license. </br>
-    License link: ${data.licenseLink}
+    This project is covered under the ${this.license} license. </br>
     </br>`;
   }
 
@@ -154,12 +155,12 @@ function generateMarkdown(data) {
 
   ## Table of Contents
   - [Description](#description)
-  - [Installation] (#installation)
-  - [Usage] (#usage)
-  - [Contributing] (#contributing)
-  - [Tests] (#tests)
-  - [Questions] (#questions)
-  - [Licenses] (#licenses)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions] #questions)
+  - [Licenses](#licenses)
   </br>
 
   ## Description
@@ -190,8 +191,10 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
-module.exports = renderLicenseBadge;
-module.exports = renderLicenseLink;
-module.exports = renderLicenseSection;
+module.exports = {
+  generateMarkdown,
+  renderLicenseBadge,
+  renderLicenseLink,
+  renderLicenseSection,
+};
 // End of JS File

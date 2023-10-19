@@ -2,12 +2,12 @@
 
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const generateMarkdown = require('./generateMarkdown');
-const renderLicenseBadge = require('./generateMarkdown');
-const renderLicenseLink = require('./generateMarkdown');
-const renderLicenseSection = require('./generateMarkdown');
-//const fs = require('fs');
-const { writeToFile } = require('fs').promises;
+const { renderLicenseBadge, renderLicenseLink, generateMarkdown, renderLicenseSection } = require('./generateMarkdown.js');
+//const licenseBadge = require('./generateMarkdown.js').renderLicenseBadge;
+//const licenseLink = require('./generateMarkdown.js').renderLicenseLink;
+//const licenseSection = require('./generateMarkdown.js').renderLicenseSection;
+const fs = require('fs');
+//const { writeToFile } = require('fs').promises;
 
 // TODO: Create an array of questions for user input
 //const promptUser = () => {
@@ -72,6 +72,13 @@ const questions = [
 function writeToFile(fileName, data) {
     // write README file; would use markdown object
     // append renderLicenseSection to generateMarkdown?
+    // appendFileSync('README.md', renderLicenseSection)
+    //licenseBadge = renderLicenseBadge(answers.license);
+    //licenseLink = renderLicenseLink(answers.license);
+    //licenseSection = renderLicenseSection(answers.license);
+
+    fs.writeFileSync(fileName, data, (err) =>
+    err ? console.log(err) : console.log('Successfully created README.md!'));
 }
 
 // TODO: Create a function to initialize app
@@ -79,13 +86,19 @@ function init()
 {
     // Starts the questions/inquirer -> prompts upon init()
     inquirer.prompt(questions)
-    .then((answers) => renderLicenseBadge(answers.license))
-    .then((answers) => renderLicenseLink(answers.license))
-    .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
-    .then(() => console.log('Successfully wrote to README.md.'))
-    .catch((err) => console.error(err));
+    //.then((answers) => renderLicenseBadge(answers.license))
+    //.then((answers) => renderLicenseLink(answers.license))
+    .then((answers) => {
+        const readmeGEN = generateMarkdown(answers);
+        const licenseBadge = renderLicenseBadge(answers.license);
+        const licenseLink = renderLicenseLink(answers.license);
+        const licenseSection = renderLicenseSection(answers.license);
+        //writeToFile('README.md', generateMarkdown(answers)))
+        writeToFile('README.md', readmeGEN);
+        fs.appendFileSync('README.md', licenseSection);
+});
+    //.catch((err) => console.error(err));
 }
-
 // Function call to initialize app
 init();
 // End of JS File
