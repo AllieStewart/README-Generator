@@ -1,7 +1,7 @@
-# Testing-Project
+# Project Template
   
   ## Badge
-  [![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]
+  
   </br>
 
   ## Table of Contents
@@ -15,15 +15,15 @@
   </br>
 
   ## Description
-  I am testing the README generator.
+  This is a test template.
   </br>
 
   ## Installation
-  You need to have a PC, and hope for the best.
+  Typing in what is needed.
   </br>
 
   ## Usage
-  I type in words and stuff happens.
+  Use it to test the program.
   </br>
 
   ## Contributing
@@ -31,16 +31,12 @@
   </br>
 
   ## Tests
-  A few, such as this one, right now.
+  This one.
   </br>
 
   ## Questions
   GitHub profile: https://github.com/AllieStewart </br>
-  Email: dontcontactme@nope </br>
-  How to reach me: Text or email, talking is scary business. </br>
+  Email: nope@uhuh.com </br>
+  How to reach me: Don't do it. </br>
   </br>
 
-
-  ## License
-  This project is covered under the Eclipse license. </br>
-  License link: https://opensource.org/licenses/EPL-1.0

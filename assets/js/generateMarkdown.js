@@ -1,7 +1,7 @@
 // Start of JS File
-    // TODO: Create a function that returns a license badge based on which license is passed in
-    // If there is no license, return an empty string
-  // Returns license badge based on which license passed in.
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+// renderLicenseBadge returns the license badge, based on which license passed in.
 function renderLicenseBadge(license) {
   // Licenses passed in: 'Apache', 'GNU', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost', 'Creative Commons Zero',
   // 'Eclipse', 'Mozilla', 'Unlicense', 'NONE'
@@ -62,8 +62,9 @@ function renderLicenseBadge(license) {
   }
 }
 
-    // TODO: Create a function that returns the license link
-    // If there is no license, return an empty string
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+// renderLicenseLink will return the link of the license chosen, as long as it is not 'NONE'.
 function renderLicenseLink(license) {
   // Licenses passed in: 'Apache', 'GNU', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost', 'Creative Commons Zero',
   // 'Eclipse', 'Mozilla', 'Unlicense', 'NONE'
@@ -122,12 +123,11 @@ function renderLicenseLink(license) {
   {
     return "";
   }
-
-  // License link:
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
+// renderLicenseSection creates and returns the License section of the README, as long as 'NONE' isn't selected.
 function renderLicenseSection(license) {
   // Returns ## License section of README
   // If no license, return empty string
@@ -146,7 +146,7 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-// ![GitHub](https://img.shields.io/github/license/:${data.github}/:${data.title})
+// generateMarkdown will generate the full markdown (except license section) for the README file.
 function generateMarkdown(data) {
   return `# ${data.title}
   
@@ -192,7 +192,7 @@ function generateMarkdown(data) {
 
 `;
 }
-
+// Exports the functions for index.js to require/read-in.
 module.exports = {
   generateMarkdown,
   renderLicenseBadge,

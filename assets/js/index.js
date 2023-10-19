@@ -1,10 +1,12 @@
 // Start of JS file
 // TODO: Include packages needed for this application
+// The inquirer, generateMarckdown, renderLicenseSection, and fs objects/functions required.
 const inquirer = require('inquirer');
-const { renderLicenseBadge, renderLicenseLink, generateMarkdown, renderLicenseSection } = require('./generateMarkdown.js');
+const { generateMarkdown, renderLicenseSection } = require('./generateMarkdown.js');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
+// questions array for the user to answer, in regards to creating a README file.
 const questions = [
     {
         type: 'input', 
@@ -62,6 +64,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+// writeToFile writes the README
 function writeToFile(fileName, data) {
 
     fs.writeFileSync(fileName, data, (err) =>
@@ -69,19 +72,17 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
+// init initializes the program with questions when 'node index.js' is ran. 
 function init()
 {
     // Starts the questions/inquirer -> prompts upon init()
     inquirer.prompt(questions)
     .then((answers) => {
         const readmeGEN = generateMarkdown(answers);
-        const licenseBadge = renderLicenseBadge(answers.license);
-        const licenseLink = renderLicenseLink(answers.license);
         const licenseSection = renderLicenseSection(answers.license);
         writeToFile('README.md', readmeGEN);
         fs.appendFileSync('README.md', licenseSection);
-});
-    //.catch((err) => console.error(err));
+    });
 }
 // Function call to initialize app
 init();
